@@ -8,8 +8,38 @@
     </head>
     <body>
         <a-scene>
+            <a-assets>
+                <video id="video" loop="false" src="sky_boxes/wla_class_1.mp4">
+                    
+                <a-asset-item id="test-obj" src="models/r2-d2.obj"></a-asset-item>
+                <a-asset-item id="test-mtl" src="models/r2-d2.mtl"></a-asset-item>
+                
+                <a-asset-item id="bb-obj" src="model-b/bb-unit.obj"></a-asset-item>
+                <a-asset-item id="bb-mtl" src="model-b/bb-unit.mtl"></a-asset-item>
+                
+            </a-assets>
+            
+            <!--The WLA video-->
+            <!-- Using the asset management system. -->
+            <a-plane  rotation="0 0 0" opacity="0.6" src="#video" width="39" height="29" position="0 13 -60" repeat="1"></a-plane>
             
             
+            
+             <!--R2-D2-->
+                  <a-entity obj-model="obj: #test-obj; mtl: #test-mtl" scale="0.02 0.02 0.02" position="3 0 23" rotation="0 180 0" sound="src: url(sound/r2-d2_noise.mp3); on: click"></a-entity>
+             <!--Rs-D2-->
+          
+          
+          
+              <!--PB-8-->
+                  <a-entity obj-model="obj: #bb-obj; mtl: #bb-mtl" scale="0.02 0.02 0.02" position="-3 1.1 23" rotation="0 180 0" sound="src: url(sound/robo_noise.mp3); on: click"></a-entity>
+              <!--PB-8-->
+          
+              
+
+              
+              
+          
           
             
             <a-plane position="0 0 50" rotation="-90 0 0" width="1000" height="1000" color="green"></a-plane>
@@ -29,7 +59,7 @@
                 repeat="indefinate"
                 direction="alternate">
             </a-animation></a-torus-knot>
-            <a-torus-knot color="#ffcf8c" position="1000 1050 350" arc="180" p="5" q="7" radius=101 radius-tubular="9" rotation="-45 0 0"><a-animation 
+            <a-torus-knot color="#ffcf8c" position="1000 1050 350" arc="180" p="5" q="7" radius=101 radius-tubular="9"rotation="-45 0 0"><a-animation 
                 attribute="rotation" 
                 from="0 0 0" 
                 to="360 180 180"
@@ -45,11 +75,13 @@
                 repeat="indefinate"
                 direction="alternate">
             </a-animation></a-torus-knot>
-            <a-sky src="sky_boxes/name_sky.jpg" ></a-sky>
+            
+            
+            <a-sky src="sky_boxes/sky_box_8.JPG" position="0 2000 2000" rotation="-3 -2700 0"></a-sky>
             
             
             <a-box position="0 0 11" height="9" width="1" depth="5" ></a-box>
-            <a-box position="3 0 11" height="9" width="1" depth="5" ></a-box>
+            <a-box position="3 0 11" heigt="9" width="1" depth="5" ></a-box>
             <a-box position="12.5 0 13" height="90" width="20" color="white" src="sky_boxes/light_wall_texture.jpg"></a-box>
             <a-box position="-9.5 0 13" height="90" width="20" color="white" src="sky_boxes/light_wall_texture.jpg" ></a-box>
             <a-box position="-20 0 55" height="90" width="1" depth="85" color="white" src="sky_boxes/light_wall_texture.jpg"></a-box>
@@ -105,9 +137,16 @@
             
             <a-plane position= "0 9 34" rotation="0 90 0" width="1"  height ="1" color="yellow" ></a-plane>
             
-            <a-camera position="0 3 0">
+            
+            
+            
+            <a-camera entry-position="0 1 150">
                 <a-cursor color="FF0000" />
             </a-camera>
+            
+            
+            
+            
             
            <!--Mr. Webb Spinning-->
             <a-plane position= "21 11 38" rotation="0 270 0" width="9"  height ="9" color="white" src="sky_boxes/webb_vr.jpg" sound="src: url(Voice_over.mp3); on: click"> 
@@ -136,7 +175,7 @@
                     <a-animation attribute="rotation" begin="click" repeat="idefinite" to="0 360 0"></a-animation>
                 </a-plane>
                 
-            <!--OUtside of the main Building-->
+            <!--OUtside of the Main Building-->
             
             <!--Ms. Shankar Spinning-->
                 <a-plane position= "14.9 6 -5.5" rotation="0 270 0" width="6"  height ="6" color="white" src="shankar_vr.jpg" sound="src: url(Voice_over.mp3); on: click"> 
@@ -176,16 +215,19 @@
             <!--Ms. Barbis-->
                 <a-plane position= "14.9 6 -28.5" rotation="0 270 0" width="6"  height ="6" color="white" src="sky_boxes/barbis_vr.jpg" sound="src: url(Voice_over.mp3); on: click"> 
                     <a-animation attribute="rotation" begin="click" repeat="idefinite" to="0 360 0"></a-animation>
+                </a-plane>
+                
+            <!--Mr, Budisantoso    -->
+                <a-plane position= "14.6 6 -39" rotation="0 270 0" width="5"  height ="5" color="white" src="sky_boxes/budi_vr.jpg" sound="src: url(Voice_over.mp3); on: click"> 
+                    <a-animation attribute="rotation" begin="click" repeat="idefinite" to="0 360 0"></a-animation>
                 </a-plane> 
-            
+                
                 
             <!-- Lewis / Ms. Shankar's and Ms. Keys' Classroom-->
-                 <a-box position="13 0 -1" height="9" color="darkorange" width="1" depth="5" rotation="0 90 0"></a-box>
-                <a-box position="13 0 2" height="9" color="blue" width="1" depth="5" rotation="0 90 0"></a-box>
-                <a-box position="15.5 0 6.5" height="30" width="10" color="white" src="sky_boxes/wall-texture.jpg" rotation="0 90 0" ></a-box>
-                <a-box position="30 0 12" height="30" width="30" color="white" src="sky_boxes/wall-texture.jpg" ></a-box>
-               <a-box position="15.5 0 -5.5" height="30" width="10" depth="1" color="white" src="sky_boxes/wall-texture.jpg" rotation="0 90 0" ></a-box>
-               <a-box position="30 0 -11" height="30" width="30" depth="1" color="white" src="sky_boxes/wall-texture.jpg" ></a-box>
+                <a-box position="15.5 0 6.5" height="30" width="10" color="white" rotation="0 90 0" src="real_texture.jpg"></a-box>
+                <a-box position="30 0 12" height="30" width="30" color="white" src="real_texture.jpg"></a-box>
+               <a-box position="15.5 0 -5.5" height="30" width="10" depth="1" color="white" src="real_texture.jpg" rotation="0 90 0" ></a-box>
+               <a-box position="30 0 -11" height="30" width="30" depth="1" color="white" src="real_texture.jpg" ></a-box>
                <a-box position="45 0 .4" height="30" width="1" depth="23.5" color="lightgrey" ></a-box>
                
             
@@ -194,14 +236,11 @@
                 
                 
             <!--Obama / Dr. Robinson's Classroom  -->
-                <a-box position="-13 0 -1" height="9" width="1" depth="5" rotation="0 90 0"></a-box>
-                <a-box position="-13 0 2" height="9" width="1" depth="5" rotation="0 90 0"></a-box>
-                <a-box position="-15.5 0 6.5" height="30" width="10" color="white" src="sky_boxes/wall-texture.jpg" rotation="0 90 0" ></a-box>
-                <a-box position="-30 0 12" height="30" width="30" color="white" src="sky_boxes/wall-texture.jpg" ></a-box>
+                <a-box position="-15.5 0 6.5" height="30" width="10" color="white" rotation="0 90 0" src="real_texture.jpg"></a-box>
+                <a-box position="-30 0 12" height="30" width="30" color="white" src="real_texture.jpg"></a-box>
                 
-                
-               <a-box position="-15.5 0 -5.5" height="30" width="10" depth="1" color="white" src="sky_boxes/wall-texture.jpg" rotation="0 90 0" ></a-box>
-               <a-box position="-30 0 -11" height="30" width="30" depth="1" color="white" src="sky_boxes/wall-texture.jpg"></a-box>
+               <a-box position="-15.5 0 -5.5" height="30" width="10" depth="1" color="white" src="real_texture.jpg" rotation="0 90 0" ></a-box>
+               <a-box position="-30 0 -11" height="30" width="30" depth="1" color="white" src="real_texture.jpg"></a-box>
                <a-box position="-45 0 .4" height="30" width="1" depth="23.5" color="blue" ></a-box>
             
                 <!--<a-plane position= "1 .01 61" rotation="-90 0 0" width="41"  height ="95" color="#8891a0"></a-plane>-->
@@ -209,46 +248,36 @@
                 
                 
             <!--Norton / Mr. Budisantoso's Classroom    -->
-                 <a-box position="-13 0 -20" height="9" width="1" depth="5" rotation="0 90 0"></a-box>
-                <a-box position="-13 0 -24" height="9" width="1" depth="5" rotation="0 90 0"></a-box>
-                <a-box position="-15.5 0 -16" height="30" width="9" color="white" src="sky_boxes/wall-texture.jpg" rotation="0 90 0" ></a-box>
+                <a-box position="-15.5 0 -16" height="30" width="9" color="white" src="real_texture.jpg" rotation="0 90 0" ></a-box>
                 <!--No Left Wall-->
-                
-               <a-box position="-15.5 0 -28.5" height="30" width="10" depth="1" color="white" src="sky_boxes/wall-texture.jpg" rotation="0 90 0" ></a-box>
-               <a-box position="-30 0 -34" height="30" width="30" depth="1" color="white" src="sky_boxes/wall-texture.jpg"></a-box>
+               <a-box position="-15.5 0 -28.5" height="30" width="10" depth="1" color="white" src="real_texture.jpg" rotation="0 90 0" ></a-box>
+               <a-box position="-30 0 -34" height="30" width="30" depth="1" color="white" src="real_texture.jpg"></a-box>
                <a-box position="-45 0 -23.1" height="30" width="1" depth="23.5" color="orange" ></a-box>
                
                
                
             <!-- Booker / Mr.  Miller's and  Ms. Corbett and Mr. Browning's Classroom-->
-                <a-box position="13 0 -20" height="9" width="1" depth="5" rotation="0 90 0"></a-box>
-                <a-box position="13 0 -24" height="9" width="1" depth="5" rotation="0 90 0"></a-box>
-                <a-box position="15.5 0 -16" height="30" width="9" color="white" src="sky_boxes/wall-texture.jpg" rotation="0 90 0" ></a-box>
+                <a-box position="15.5 0 -16" height="30" width="9" color="white" src="real_texture.jpg" rotation="0 90 0" ></a-box>
                 <!--No Left Wall-->
-                
-               <a-box position="15.5 0 -28.5" height="30" width="10" depth="1" color="white" src="sky_boxes/wall-texture.jpg" rotation="0 90 0" ></a-box>
-               <a-box position="30 0 -34" height="30" width="30" depth="1" color="white" src="sky_boxes/wall-texture.jpg"></a-box>
+               <a-box position="15.5 0 -28.5" height="30" width="10" depth="1" color="white" src="real_texture.jpg" rotation="0 90 0" ></a-box>
+               <a-box position="30 0 -34" height="30" width="30" depth="1" color="white" src="real_texture.jpg"></a-box>
                <a-box position="45 0 -22.7" height="30" width="1" depth="23.5" color="#0ffbff" ></a-box>
                
                
             <!--Ms. Barbis' Classroom-->
-                <a-box position="13 0 -43" height="9" width="1" depth="5" rotation="0 90 0"></a-box>
-                <a-box position="13 0 -47" height="9" width="1" depth="5" rotation="0 90 0"></a-box>
-                <a-box position="15.5 0 -39" height="30" width="9" color="white" src="sky_boxes/wall-texture.jpg" rotation="0 90 0" ></a-box>
+                <a-box position="15.5 0 -39" height="30" width="9" color="white" src="real_texture.jpg" rotation="0 90 0" ></a-box>
                 <!--No Left Wall-->
                 
-               <a-box position="15.5 0 -51.5" height="30" width="10" depth="1" color="white" src="sky_boxes/wall-texture.jpg" rotation="0 90 0" ></a-box>
-               <a-box position="30 0 -57" height="30" width="30" depth="1" color="white" src="sky_boxes/wall-texture.jpg"></a-box>
-               <a-box position="45 0 -46.2" height="30" width="1" depth="23.5" color="red" ></a-box>
+               <a-box position="15.5 0 -51.5" height="30" width="10" depth="1" color="white" src="real_texture.jpg" rotation="0 90 0" ></a-box>
+               <a-box position="30 0 -57" height="30" width="30" depth="1" color="white" src="real_texture.jpg"></a-box>
+               <a-box position="45 0 -46.2" height="30" width="1" depth="23.5" color="lightblue" ></a-box>
                
             <!--VR Room-->
-                <a-box position="-13 0 -43" color="darkorange" height="9" width="1" depth="5" rotation="0 90 0"></a-box>
-                <a-box position="-13 0 -47" color="darkorange" height="9" width="1" depth="5" rotation="0 90 0"></a-box>
-                <a-box position="-15.5 0 -39" height="30" width="9" color="white" src="sky_boxes/wall-texture.jpg" rotation="0 90 0" ></a-box>
+                <a-box position="-15.5 0 -39" height="30" width="9" color="white" src="real_texture.jpg" rotation="0 90 0" ></a-box>
                 <!--No Left Wall-->
                 
-               <a-box position="-15.5 0 -51.5" height="30" width="10" depth="1" color="white" src="sky_boxes/wall-texture.jpg" rotation="0 90 0" ></a-box>
-               <a-box position="-30 0 -57" height="30" width="30" depth="1" color="white" src="sky_boxes/wall-texture.jpg"></a-box>
+               <a-box position="-15.5 0 -51.5" height="30" width="10" depth="1" color="white" src="real_texture.jpg" rotation="0 90 0" ></a-box>
+               <a-box position="-30 0 -57" height="30" width="30" depth="1" color="white" src="real_texture.jpg"></a-box>
                <a-box position="-45 0 -46.2" height="30" width="1" depth="23.5" color="grey" ></a-box>
                
                
@@ -291,7 +320,7 @@
             </a-plane>
             
             <a-plane position= "-2 6 33" rotation="0 220 0" width="1"  height ="1" color="#18f218" >
-                <a-animation attribute="rotation" repeat="idefinite" to="0 a720 0"></a-animation>
+                <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
             <a-plane position= "-1 9 35" rotation="0 180 0" width="1"  height ="1" color="orange" >
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
@@ -338,32 +367,11 @@
             <a-plane position="2 4 36" rotation="0 91 0" width="1" height="1" color="#18f218">
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            
-            
-            <a-cylinder position="29 0 20" color="brown" radius=".5" height="6" ></a-cylinder>
-            <a-sphere position="29 5 20" color="green" radius="2"></a-sphere>
-            <a-cylinder position="35 0 24" color="brown" radius=".5" height="6" ></a-cylinder>
-            <a-sphere position="35 5 24" color="green" radius="2"></a-sphere>
-            <a-cylinder position="40 0 30" color="brown" radius=".5" height="6" ></a-cylinder>
-            <a-sphere position="40 5 30" color="green" radius="2"></a-sphere>
-            <a-cylinder position="45 0 45" color="brown" radius=".5" height="6" ></a-cylinder>
-            <a-sphere position="45 5 45" color="green" radius="2"></a-sphere>
-            <a-cylinder position="28 0 30" color="brown" radius=".5" height="6" ></a-cylinder>
-            <a-sphere position="28 5 30" color="green" radius="2"></a-sphere>
-            <a-cylinder position="33 0 33" color="brown" radius=".5" height="6" ></a-cylinder>
-            <a-sphere position="33 5 33" color="green" radius="2"></a-sphere>
-            <a-cylinder position="40 0 40" color="brown" radius=".5" height="6" ></a-cylinder>
-            <a-sphere position="40 5 40" color="green" radius="2"></a-sphere>
-            <a-cylinder position="35 0 44" color="brown" radius=".5" height="6" ></a-cylinder>
-            <a-sphere position="35 5 44" color="green" radius="2"></a-sphere>
-            <a-cylinder position="31 0 35" color="brown" radius=".5" height="6" ></a-cylinder>
-            <a-sphere position="31 5 35" color="green" radius="2"></a-sphere>
-            <a-cylinder position="50 0 50" color="brown" radius=".5" height="6" ></a-cylinder>
-            <a-sphere position="50 5 50" color="green" radius="2"></a-sphere>
-            <a-cylinder position="60 0 30" color="brown" radius=".5" height="6" ></a-cylinder>
             <!--
             <a-entity cursor position="21 11 33"></a-entity>
     <a-entity id="webb" geometry="primitive: plane" material="src: sky_boxes/webb_vr.jpg" position="21 11 33" sound="src: url(Voice_over.mp3); on: click"></a-entity>-->
+    
+    
         </a-scene>
     </body>
 </html>
