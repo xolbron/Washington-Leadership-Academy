@@ -1,0 +1,22 @@
+# Blender MTL File: 'None'
+# Material Count: 2
+
+newmtl 5fafe1
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 0.372549 0.686275 0.882353
+Ks 0.001176 0.001176 0.001176
+Ni 1.000000
+d 1.000000
+illum 2
+
+newmtl r_1
+Ns 96.078431
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.012549 0.012549 0.012549
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump r.1Surface_Color.tif
+map_Kd r.1Surface_Color.tif
