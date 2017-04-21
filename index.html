@@ -8,12 +8,8 @@
     <body>
         <a-scene>
             <a-assets>
-                    
-         
-                
                 <a-asset-item id="test-obj" src="models/r2-d2.obj"></a-asset-item>
                 <a-asset-item id="test-mtl" src="models/r2-d2.mtl"></a-asset-item>
-                
                 
                 
                 <a-asset-item id="bb-obj" src="model-b/bb-unit.obj"></a-asset-item>
@@ -21,21 +17,21 @@
                 
             </a-assets>
             
+            <!--Begining of WLA Front Door-->
+                  <a-entity position="0 4.3 13" scale="2 2 1.5" obj-model="obj: url(front_door/low-poly-wooden-door.obj); mtl: url(front_door/low-poly-wooden-door.mtl)"></a-entity>
+            <!--End of WLA Front Door-->
             
-            
-            <!--The WLA video-->
-            <!-- Using the asset management system. -->
+            <!--sUsing the asset management system-->
             <a-box opacity="1" src="sky_boxes/wla_class_1.mp4" width="27" rotation="0 90 0" height="15" position="-19 11 82" repeat="1" ></a-box>
             
             
              <!--R2-D2-->
-                  <a-entity dynamic-body obj-model="obj: #test-obj; mtl: #test-mtl" scale="0.03 0.03 0.03" position="3 0 23" rotation="0 180 0" sound="src: url(sound/r2-d2_noise.mp3); on: click"></a-entity>
+                  <a-entity obj-model="obj: #test-obj; mtl: #test-mtl" scale="0.03 0.03 0.03" position="3 0 23" rotation="0 180 0" sound="src: url(sound/r2-d2_noise.mp3); on: click"></a-entity>
              <!--Rs-D2-->
           
              <!--PB-8-->
                   <a-entity obj-model="obj: #bb-obj; mtl: #bb-mtl" scale="0.02 0.02 0.02" position="-3 1.1 53" rotation="-20 270 0" sound="src: url(sound/robo_noise.mp3); on: click"></a-entity>
              <!--PB-8-->
-          <a-box ></a-box>
               
             <a-plane position="0 0 50" rotation="-90 0 0" width="1000" height="1000" color="green"></a-plane>
             
@@ -96,9 +92,14 @@
             
             
             
+            <!--Left side of the Wall-->
+            <a-box position="13.3 0 13" height="90" width="18" color="white" src="sky_boxes/light_wall_texture.jpg"></a-box>
             
-            <a-box position="12.5 0 13" height="90" width="20" color="white" src="sky_boxes/light_wall_texture.jpg"></a-box>
-            <a-box position="-9.5 0 13" height="90" width="20" color="white" src="sky_boxes/light_wall_texture.jpg" ></a-box>
+            <!--Right side of the Wall-->
+            <a-box position="-12.5 0 12.9" height="90" width="16" color="white" src="sky_boxes/light_wall_texture.jpg" ></a-box>
+            <!--Floating Front Door-->
+            <a-box position="-0.1 29.3 12.9" height="31.5" width="40.8" depth=".7" color="white" src="sky_boxes/light_wall_texture.jpg" ></a-box>
+            
             <a-box position="-20 0 55" height="90" width="1" depth="85" color="white" src="sky_boxes/light_wall_texture.jpg"></a-box>
             
             
@@ -148,10 +149,6 @@
             <a-sphere position="-11 4 14.4" color="green" radius=".4"></a-sphere>
             <a-cylinder position="-11 1 14.4" color="brown" radius=".1" height="6"></a-cylinder>
             
-            <a-sphere position="-1 1 14.4" color="green" radius="1"></a-sphere>
-            <a-sphere position="-1 2.8 14.4" color="green" radius=".6"></a-sphere>
-            <a-sphere position="-1 4 14.4" color="green" radius=".4"></a-sphere>
-            <a-cylinder position="-1 1 14.4" color="brown" radius=".1" height="6"></a-cylinder>
             
             <a-sphere position="5 1 14.4" color="green" radius="1"></a-sphere>
             <a-sphere position="5 2.8 14.4" color="green" radius=".6"></a-sphere>
@@ -167,16 +164,6 @@
             <a-sphere position="-5 2.8 14.4" color="green" radius=".6"></a-sphere>
             <a-sphere position="-5 4 14.4" color="green" radius=".4"></a-sphere>
             <a-cylinder position="-5 1 14.4" color="brown" radius=".1" height="6"></a-cylinder>
-            
-            <!--Base of the statue-->
-            <a-cylinder position="-1 0 35" color="#5FAFE1" radius="4" height="2"></a-cylinder>
-            <!--Center of the Statue-->
-            <a-box position="-1 2 34" color="#FFB42D" width="5" depth="5" height="19"></a-box>
-            
-            <a-plane position= "0 9 34" rotation="0 90 0" width="1"  height ="1" color="yellow" ></a-plane>
-   
-            
-            
             
            <!--Mr. Webb Spinning-->
             <a-plane position= "21 11 38" rotation="0 270 0" width="9"  height ="9" color="white" src="sky_boxes/webb_vr.jpg" sound="src: url(Voice_over.mp3); on: click"> 
@@ -235,8 +222,10 @@
                 
  <!--MAKE SURE TO MOVE THIS AFTER YOU ARE DONE-->
           
-          <a-entity position="0 4 5" rotation="0 180 0" look-controls wasd-controls>
-              <a-camera></a-camera>
+          <a-entity position="0 3 -20" rotation="0 -160 0" look-controls wasd-controls>
+              <a-camera>
+              <a-cursor color="#ffffff"/>
+             </a-camera>
           </a-entity>
       
           <!--These are the hand control settings-->
@@ -246,17 +235,6 @@
           <!--Oculus Hand Controls-->
           <a-entity oculus-touch-controls="hand: left"></a-entity>
           <a-entity oculus-touch-controls="hand: right"></a-entity>
-        
-        <a-camera id="player"
-          camera
-          universal-controls
-          
-          kinematic-body
-          position="0 4 88"
-          rotation="0 180 0">
-              <a-cursor color="#ffffff"/>
-        </a-camera>
-        <a-entity camera="userHeight: 4" look-controls></a-entity>
  <!--MAKE SURE TO MOVE THIS AFTER YOU ARE DONE-->
                 
             <!--Lower Left wall for the classrooms-->
@@ -336,99 +314,89 @@
                <a-box position="165.5 0 128.5" rotation="0 90 0" height="35" width="1" depth="32" color="lightpink" ></a-box>
               
             <!--Statue of Main Hall-->
-            <plane position="0 11 0" rotation="0 270 0" width="7" height="2" color="pink"></plane>
-            
-            <a-box position="-1 12 33"></a-box>
             <!--The XQ sign Front-->
-            <a-plane position= "-1 12 33" rotation="0 180 0" width="9"  height ="7" color="white" src="sky_boxes/xq_center_place.png"> 
+            <a-box position= "0 14 39" rotation="0 180 0" width="7"  height ="6" depth="7" color="white" src="sky_boxes/xq_center_place.png"> 
                 <a-animation attribute="rotation" begin="click" repeat="idefinite" to="0 360 0"></a-animation>
-                </a-plane>
+                </a-box>
                 
-            <!--The XQ sign back-->
-            <a-plane position= "-1 12 36" rotation="0 0 0" width="9"  height ="7" color="white" src="sky_boxes/xq_center_place.png"> 
-                <a-animation attribute="rotation" begin="click" repeat="idefinite" to="0 360 0"></a-animation>
-            </a-plane>
-            <!--The XQ sign towards Mr. Webb-->
-            <a-plane position= "1 12 33" rotation="0 90 0" width="9"  height ="7" color="white" src="sky_boxes/xq_center_place.png"> 
-                <a-animation attribute="rotation" begin="click" repeat="idefinite" to="0 360 0"></a-animation>
-            </a-plane>
-            <a-plane position= "-1 12 33" rotation="0 180 0" width="9"  height ="7" color="white" src="sky_boxes/xq_center_place.png"> 
-                <a-animation attribute="rotation" begin="click" repeat="idefinite" to="0 360 0"></a-animation>
-            </a-plane>
-            <a-plane position= "-1 12 33" rotation="0 180 0" width="9"  height ="7" color="white" src="sky_boxes/xq_center_place.png"> 
-                <a-animation attribute="rotation" begin="click" repeat="idefinite" to="0 360 0"></a-animation>
-            </a-plane>
+            <!--Base of the statue-->
+            <a-box position="0 0 39" color="#5FAFE1" width="6.5" depth="6.5" height="2"></a-box>
+            <!--See Through center of the circle-->
+            <a-box position="0 6 39" color="#FFB42D" opacity=".7" width="5.5" depth="5" height="10"></a-box>
             
+            <a-plane position= "0 9 39" rotation="0 90 0" width="1"  height ="1" color="yellow" ></a-plane>
             
-            <a-plane position= "2 7 34" rotation="0 270 0" width="1"  height ="1" color="green" >
+            <!--Normal planes-->
+            
+            <a-plane position= "2 7 39" rotation="0 270 0" width="1"  height ="1" color="green" >
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            <a-plane position= "1 6 34" rotation="0 270 0" width="1"  height ="1" color="blue" >
+            <a-plane position= "1 6 39" rotation="0 270 0" width="1"  height ="1" color="blue" >
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            <a-plane position= "-2 8 34" rotation="0 200 0" width="1"  height ="1" color="yellow" >
+            <a-plane position= "-2 8 40" rotation="0 200 0" width="1"  height ="1" color="yellow" >
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
             
-            <a-plane position= "-1 8 35" rotation="0 10 0" width="1"  height ="1" color="yellow" >
+            <a-plane position= "-1 8 39" rotation="0 10 0" width="1"  height ="1" color="black" >
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
             
-            <a-plane position= "-2 6 33" rotation="0 220 0" width="1"  height ="1" color="#1abc9c" >
+            <a-plane position= "-2 6 39" rotation="0 220 0" width="1"  height ="1" color="#1abc9c" >
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            <a-plane position= "-1 9 35" rotation="0 180 0" width="1"  height ="1" color="#9b59b6" >
+            <a-plane position= "-1 9 39" rotation="0 180 0" width="1"  height ="1" color="#9b59b6" >
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            <a-plane position= "-1 4 33" rotation="0 190 0" width="1"  height ="1" color="#d35400" >
+            <a-plane position= "-1 4 39" rotation="0 190 0" width="1"  height ="1" color="#d35400" >
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            <a-plane position= "-3 9 35" rotation="0 180 0" width="1"  height ="1" color="#e74c3c" >
+            <a-plane position= "-2 9 41.5" rotation="0 180 0" width="1"  height ="1" color="#e74c3c" >
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            <a-plane position= "2 4 35" rotation="0 180 0" width="1"  height ="1" color="#00e598" >
+            <a-plane position= "2 4 41" rotation="0 180 0" width="1"  height ="1" color="#00e598" >
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            <a-plane position= "2 4 34" rotation="0 90 0" width="1"  height ="1" color="#f39c12" >
+            <a-plane position= "2 4 39" rotation="0 90 0" width="1"  height ="1" color="#f39c12" >
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            <a-plane position= ".5 4 34" rotation="0 180 0" width="1"  height ="1" color="#34495e" >
+            <a-plane position= ".5 4 38" rotation="0 180 0" width="1"  height ="1" color="#34495e" >
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            <a-plane position= "-1 0 35" rotation="0 180 0" width="1"  height ="1" color="#8e44ad" >
+            <a-plane position= "-1 0 42" rotation="0 180 0" width="1"  height ="1" color="#8e44ad" >
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            <a-plane position="-1 4 36" rotation="0 0 0" width="1" height="1" color="#27ae60">
+            <a-plane position="-1 4 39" rotation="0 0 0" width="1" height="1" color="#27ae60">
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            <a-plane position="0 5 36" rotation="0 20 0" width="1" height="1" color="#e67e22">
+            <a-plane position="0 5 40" rotation="0 20 0" width="1" height="1" color="#e67e22">
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            <a-plane position="-2 3 36" rotation="0 -50 0" width="1" height="1" color="#95a5a6">
+            <a-plane position="-2 3 41" rotation="0 -50 0" width="1" height="1" color="#95a5a6">
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            <a-plane position="-1 2 36" rotation="0 -50 0" width="1" height="1" color="#9b59b6">
+            <a-plane position="-1 2 39" rotation="0 -50 0" width="1" height="1" color="#9b59b6">
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            <a-plane position="-2 3 36" rotation="0 -50 0" width="1" height="1" color="#c0392b">
+            <a-plane position="-2 3 38" rotation="0 -50 0" width="1" height="1" color="#c0392b">
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            <a-plane position="-2 3 36" rotation="0 -50 0" width="1" height="1" color="">
+            <a-plane position="-2 5 39" rotation="0 -50 0" width="1" height="1" color="">
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            <a-plane position="0 3 36" rotation="0 50 0" width="1" height="1" color="red">
+            <a-plane position="1 9 41" rotation="0 50 0" width="1" height="1" color="red">
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            <a-plane position="-3 2 36" rotation="0 -30 0" width="1" height="1" color="green">
+            <a-plane position="2 9 39" rotation="0 -30 0" width="1" height="1" color="green">
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            <a-plane position="1 2 35" rotation="0 0 0" width="1" height="1" color="black">
+            <a-plane position="1 2 39" rotation="0 0 0" width="1" height="1" color="black">
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            <a-plane position="-2 4 36" rotation="0 -60 0" width="1" height="1" color="#18f218">
+            <a-plane position="-2 8.3 39" rotation="0 -60 0" width="1" height="1" color="#18f218">
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
-            <a-plane position="2 4 36" rotation="0 91 0" width="1" height="1" color="#18f218">
+            <a-plane position="2 9 39" rotation="0 91 0" width="1" height="1" color="#18f218">
                 <a-animation attribute="rotation" repeat="idefinite" to="0 720 0"></a-animation>
             </a-plane>
             
