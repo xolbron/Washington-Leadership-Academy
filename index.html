@@ -8,6 +8,9 @@
     <body>
         <a-scene>
             <a-assets>
+            
+                <video id="video" begin="3500" begin="click" loop="false" src="sky_boxes/wla_class_1.mp4" />
+            
                 <a-asset-item id="test-obj" src="models/r2-d2.obj"></a-asset-item>
                 <a-asset-item id="test-mtl" src="models/r2-d2.mtl"></a-asset-item>
                 
@@ -17,12 +20,18 @@
                 
             </a-assets>
             
+            
+            
+            <!--Tha WLA Video-->
+            <!--The Intro Video WLA-->
+            <a-box opacity="1" src="#video" width="25" rotation="0 0 0" height="15" position="0 25 12.8" repeat="2" ></a-box>
+            
+            
+            
             <!--Begining of WLA Front Door-->
                   <a-entity position="0 4.3 13" scale="2 2 1.5" obj-model="obj: url(front_door/low-poly-wooden-door.obj); mtl: url(front_door/low-poly-wooden-door.mtl)"></a-entity>
             <!--End of WLA Front Door-->
             
-            <!--sUsing the asset management system-->
-            <a-box opacity="1" src="sky_boxes/wla_class_1.mp4" width="27" rotation="0 90 0" height="15" position="-19 11 82" repeat="1" ></a-box>
             
             
              <!--R2-D2-->
@@ -122,10 +131,7 @@
             
             <a-box position="1 22 98" height="45" width="43" depth="1" opacity=".9" color="white" src="sky_boxes/back_sign_building.png"></a-box>
             
-            <a-plane position= "1 .09 61" rotation="-90 0 0" width="41"  height ="95" color="#8891a0"></a-plane>
-            
-            
-            <a-plane position= "1.5 -1 14" rotation="0 180 0" width="43"  height ="90" color="#7a4545"></a-plane>
+            <a-plane position= "1 .09 61" rotation="-90 0 0" width="41"  height ="95" src="persimmon.jpg" color="white"></a-plane>
            
            
            <!--The Bushes-->
@@ -222,8 +228,8 @@
                 
  <!--MAKE SURE TO MOVE THIS AFTER YOU ARE DONE-->
           
-          <a-entity position="0 3 -20" rotation="0 -160 0" look-controls wasd-controls>
-              <a-camera>
+          <a-entity position="0 3 -20" rotation="0 -180 0" look-controls wasd-controls>
+              <a-camera wasd-controls>
               <a-cursor color="#ffffff"/>
              </a-camera>
           </a-entity>
@@ -283,12 +289,18 @@
                
                <!--Back Wall-->
                <a-box position="37.5 0 128.5" height="35" rotation="0 90 0" width="1" depth="32" color="#5FAFE1" ></a-box>
+               <!--Flooring-->
+                   <a-plane position="37.3 .09 113.25" rotation="-90 0 0" width="31" height="29.5" src="clasroom_wood.jpg" ></a-plane>
+                   
                
             <!--Lewis Shankar/Keys Classroom-->
                 <a-box position="60.5 0 98" height="35" width="14" color="#fffffff" rotation="0 0 0" src="real_texture.jpg"></a-box>
                 <a-box position="86.5 0 113" height="35" rotation="0 90 0" width="30" color="white" src="real_texture.jpg"></a-box>
                <a-box position="78.75 0 98" height="35" width="16.5" depth="1" color="white" src="real_texture.jpg" rotation="0 0 0" ></a-box>
                <a-box position="70.25 0 128.5" height="35" rotation="0 90 0" width="1" depth="33.5" color="blue" ></a-box>
+               
+               <!--Flooring-->
+                   <a-plane position="69.5 .09 113.25" rotation="-90 0 0" width="33" height="29.5" src="clasroom_wood.jpg" ></a-plane>
                 
             <!--Obama Dr. Robison/ Mr. Ramos Classroom-->
                 <a-box position="94 0 98" height="35" width="14" color="white" src="real_texture.jpg" rotation="0 0 0" ></a-box>
@@ -297,12 +309,18 @@
                <a-box position="118 0 113" height="35" width="30" depth="1" color="white" src="real_texture.jpg" rotation="0 90 0"></a-box>
                <a-box position="102.75 0 128.5" height="35" width="1" depth="31.5" rotation="0 90 0" color="orange" ></a-box>
                
+               <!--Flooring-->
+                   <a-plane position="102 .09 113.25" rotation="-90 0 0" width="31" height="29.5" src="clasroom_wood.jpg" ></a-plane>
+               
             <!--Norton Mr. Budisantoso-->
                 <a-box position="125.5 0 98" height="35" width="14" color="white" src="real_texture.jpg" rotation="0 0 0" ></a-box>
                 <!--No Left Wall-->
                <a-box position="142.5 0 98" height="35" width="14" depth="1" color="white" src="real_texture.jpg" rotation="0 0 0" ></a-box>
                <a-box position=" 149 0 113" height="35" width="30" depth="1" color="white" rotation="0 90 0" src="real_texture.jpg"></a-box>
                <a-box position="134 0 128.5"  rotation="0 90 0" height="35" width="1" depth="31" color="#0ffbff" ></a-box>
+               
+               <!--Flooring-->
+                   <a-plane position="133 .09 113.25" rotation="-90 0 0" width="31" height="29.5" src="clasroom_wood.jpg" ></a-plane>
                
             <!--Ms. Barbis' Classroom-->
                 <a-box position="156.5 0 98" height="35" width="14" color="white" src="real_texture.jpg" rotation="0 0 0" ></a-box>
@@ -312,6 +330,9 @@
                
                <a-box position="181 0 113" height="35" width="30" depth="1" color="white" rotation="0 90 0" src="real_texture.jpg"></a-box>
                <a-box position="165.5 0 128.5" rotation="0 90 0" height="35" width="1" depth="32" color="lightpink" ></a-box>
+               
+                <!--Flooring-->
+                   <a-plane position="133 .09 113.25" rotation="-90 0 0" width="31" height="29.5" src="clasroom_wood.jpg" ></a-plane>
               
             <!--Statue of Main Hall-->
             <!--The XQ sign Front-->
